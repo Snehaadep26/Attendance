@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.RequestLeaves">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leave Type"
+            android:textColor="#636363"
+            android:textSize="12sp"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            />
+        <AutoCompleteTextView
+            android:id="@+id/spi"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/stroke_box"
+            android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+            android:hint="Select Leave type"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:textColor="#191919"
+            android:textColorHint="#AEAEAE"
+            android:textSize="14sp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+
+        </AutoCompleteTextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/startdate_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date "
+                    android:textColor="#636363"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="24dp"
+                    android:textSize="12sp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/clocl_ET"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="171dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:focusableInTouchMode="false"
+                    android:textColorHint="#AEAEAE"
+                    app:boxStrokeColor="#E6E6E6"
+                    app:endIconDrawable="@drawable/calendar"
+                    app:endIconMode="custom"
+                    android:layout_below="@+id/startdate_Tv"
+                    app:hintTextColor="#AEAEAE">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/startdate_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Select date"
+                        android:inputType="date"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/enddate_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End date"
+                    android:textColor="#636363"
+                    android:fontFamily="@font/roboto_bold"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="24dp"
+                    android:textSize="12sp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectdate_ET"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="171dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="24dp"
+                    android:focusableInTouchMode="false"
+                    android:textColorHint="#AEAEAE"
+                    app:boxStrokeColor="#E6E6E6"
+                    app:endIconDrawable="@drawable/calendar"
+                    app:endIconMode="custom"
+                    android:layout_below="@+id/enddate_Tv"
+                    app:hintTextColor="#AEAEAE">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/endate_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Select date "
+                        android:inputType="date"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Days"
+            android:textColor="#636363"
+            android:textSize="12sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/roboto_bold"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/total_Tl"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="24dp"
+            android:focusableInTouchMode="false"
+            android:textColorHint="#AEAEAE"
+            app:boxStrokeColor="#E6E6E6"
+            app:endIconMode="custom"
+            app:hintTextColor="#AEAEAE">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/totalhours_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="Number of days"
+                android:inputType="number"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason(s)"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="13sp"
+            android:textColor="#636363"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:padding="2dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reason_Tl"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="23dp"
+            android:focusableInTouchMode="false"
+            android:textColorHint="#AEAEAE"
+            app:boxStrokeColor="#E6E6E6"
+            app:endIconMode="custom"
+            app:hintTextColor="#AEAEAE">
+
+            <AutoCompleteTextView
+                android:id="@+id/reason_et"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:hint="@string/reason_per"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="125dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:text="MARK"
+            android:textColor="#FFFFFF"
+            android:enabled="false"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="100dp"/>
+    </LinearLayout>
+</ScrollView>

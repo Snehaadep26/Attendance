@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    tools:context=".Fragments.LeavesFragment">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="8dp"
+        android:layout_height="0dp"
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Leave summary"
+            android:textColor="#191919"
+            android:textSize="16sp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="179dp"
+                android:layout_height="195dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="#E6E6E6"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="PRIVILEGE LEAVE"
+                    android:textColor="#191919"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/hidebtn"
+                    android:layout_width="18dp"
+                    android:layout_height="195dp"
+                    android:layout_marginStart="-9dp"
+                    android:background="@drawable/oval3"
+                    android:orientation="vertical" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/month"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="59dp"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar"
+                    android:textAlignment="center">
+                </ProgressBar>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="143dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="6"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="163dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="18"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="179dp"
+                android:layout_height="195dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="#E6E6E6"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="CASUAL LEAVE"
+                    android:textColor="#191919"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/yellow_viewbtn"
+                    android:layout_width="18dp"
+                    android:layout_height="195dp"
+                    android:layout_marginStart="-9dp"
+                    android:background="@drawable/oval2"
+                    android:orientation="vertical" />
+
+                <ProgressBar
+                    android:id="@+id/causal_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/month"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="59dp"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar"
+                    android:textAlignment="center">
+
+                </ProgressBar>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="143dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="6"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="163dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="18"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="179dp"
+                android:layout_height="195dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="#E6E6E6"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="PRIVILEGE LEAVE"
+                    android:textColor="#191919"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pink_viewbtn"
+                    android:layout_width="18dp"
+                    android:layout_height="195dp"
+                    android:layout_marginStart="-9dp"
+                    android:background="@drawable/oval4"
+                    android:orientation="vertical" />
+
+                <ProgressBar
+                    android:id="@+id/privilege_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/month"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="59dp"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar"
+                    android:textAlignment="center">
+
+                </ProgressBar>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="143dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="6"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="163dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="18"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="179dp"
+                android:layout_height="195dp"
+                android:layout_row="1"
+                android:layout_marginEnd="4dp"
+                android:layout_column="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="#E6E6E6"
+                app:strokeWidth="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="CASUAL LEAVE"
+                    android:textColor="#191919"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/blue_viewbtn"
+                    android:layout_width="18dp"
+                    android:layout_height="195dp"
+                    android:layout_marginStart="-9dp"
+                    android:background="@drawable/oval5"
+                    android:orientation="vertical" />
+
+                <ProgressBar
+                    android:id="@+id/causal2_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_below="@+id/month"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="59dp"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar"
+                    android:textAlignment="center">
+
+                </ProgressBar>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="143dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="6"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="163dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Balance"
+                        android:textColor="#636363"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="92dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="18"
+                        android:textColor="#191919"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOAD MORE"
+            android:textColor="#1089FF"
+            android:textSize="14sp"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leave/Request history"
+            android:textColor="#191919"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/roboto_bold"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:id="@+id/leave_history_RV"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+    </FrameLayout>
+
+</ScrollView>

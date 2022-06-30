@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HomePage">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayoutAttendanceHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                >
+                <androidx.cardview.widget.CardView
+        android:id="@+id/withdata_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/attendanceTodayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Your attendance today"
+                android:textColor="#191919"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+                <TextView
+                    android:id="@+id/datetv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="12/12/2021"
+                    android:textColor="#636363"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/attendanceTodayText"
+                    app:layout_constraintTop_toBottomOf="@+id/attendanceTodayText" />
+
+                <TextView
+                    android:id="@+id/dotText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="\u25cf"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toBottomOf="@+id/attendanceTodayText"
+                    android:layout_marginStart="8dp"
+                    android:textColor="#636363"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/daytv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Monday"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#636363"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/dotText1"
+                    app:layout_constraintStart_toEndOf="@+id/dotText1"
+                    app:layout_constraintTop_toTopOf="@+id/dotText1" />
+            </LinearLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/clockimg"
+                android:layout_width="193dp"
+                android:layout_height="183dp"
+                android:layout_marginTop="24dp"
+                android:elevation="2dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"
+                android:src="@drawable/clock_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/daytv"
+                app:strokeColor="#E6E6E6"
+                app:strokeWidth="1dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clockmein_btn"
+                    android:layout_width="161dp"
+                    android:layout_height="41dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="97dp"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:text="clock me in"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/clockmeout_btn"
+                    android:layout_width="161dp"
+                    android:layout_height="41dp"
+                    android:layout_marginStart="97dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="clock me out"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                >
+
+                <ImageView
+                    android:id="@+id/clockInImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/clockin" />
+
+                <ImageView
+                    android:id="@+id/clockOutImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/clockout" />
+
+                <ImageView
+                    android:id="@+id/geofenceImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:src="@drawable/geofence" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/clock_in_time"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="47dp"
+                    android:textColor="#191919"
+
+                    />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/clock_out_text"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="40dp"
+                    android:textColor="#191919"
+
+                    />
+                <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/geofence_location_Tv"
+                android:layout_gravity="center"
+                android:layout_marginStart="40dp"
+                android:textColor="#191919"
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                >
+
+                <TextView
+                    android:id="@+id/clockInTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="41dp"
+                    android:text="Clock in"
+                    android:textColor="#636363"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/clockOutTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="77dp"
+                    android:text="Clock out"
+                    android:textColor="#636363"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/geofenceTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="71dp"
+                    android:text="Geo fence"
+                    android:textColor="#636363"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/forgotClockInTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="FORGOT TO CLOCK IN?"
+                android:textAlignment="center"
+                android:textColor="#1089FF" />
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+            android:id="@+id/attoverview_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/attendanceoverviewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Attendance Overview "
+                    android:textColor="#191919"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="horizontal"
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="Since"
+                        android:textColor="#636363"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:id="@+id/sincedatetext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="12/12/2021"
+                        android:textColor="#636363"
+                        android:textSize="12dp"/>
+
+                    <TextView
+                    android:id="@+id/view_profile_Tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="114dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="VIEW PROFILE"
+                    android:textColor="#1089FF"
+                    android:textSize="14dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/presentdayimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/present" />
+
+                    <ImageView
+                        android:id="@+id/absentdayimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/adsent" />
+
+                    <ImageView
+                        android:id="@+id/overallday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/overall" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/present_days_Tv"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="29dp"
+                        android:textColor="#191919"
+                        android:fontFamily="@font/roboto_bold"
+
+                        />
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/absent_days_Tv"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="50dp"
+                        android:textColor="#191919"
+
+                        />
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/overall_per_Tv"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="50dp"
+                        android:textColor="#191919"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/presentTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="22dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/present_working_hr"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/absentTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="40dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/absent_working_hr"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/overallPerTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="50dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/overall_per"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/warningone"
+                        android:layout_marginStart="270dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/lowAttendance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low_per"
+                        android:visibility="gone"
+                        android:textColor="#FF414D" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="12dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/totalWorkingImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/workingtotal" />
+
+                    <ImageView
+                        android:id="@+id/averageWorking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/avgworking" />
+
+                    <ImageView
+                        android:id="@+id/totalLeaves"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:src="@drawable/leave" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/total_working_hrs"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="29dp"
+                        android:textColor="#191919"
+                        android:fontFamily="@font/roboto_bold"
+
+                        />
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/average_working_hrs"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="50dp"
+                        android:textColor="#191919"
+
+                        />
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:id="@+id/total_leaves"
+                        android:fontFamily="@font/roboto_bold"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="50dp"
+                        android:textColor="#191919"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/totalWorkingdayTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/total_working_hr"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/averageWorkingTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="35dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/average_working_hr"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/totalLeavesTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="42dp"
+                        android:fontFamily="@font/roboto"
+                        android:gravity="center"
+                        android:text="@string/total_leaves"
+                        android:textColor="#636363"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginHorizontal="12dp"
+                    app:cardCornerRadius="8dp"
+                    >
+                    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/attendanceSummaryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/attendanceSummaryImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:src="@drawable/attendancesummary" />
+
+                <TextView
+                    android:id="@+id/attendanceSummaryTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Attendance Summary" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+
+                    android:src="@drawable/backarrow"
+
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="345dp"
+                android:layout_height="1dp"
+                android:background="#EDEDED"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:id="@+id/holidayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/holidayImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:src="@drawable/holiday" />
+
+                <TextView
+                    android:id="@+id/holidayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Holidays" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+
+                    android:src="@drawable/backarrow"
+
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="345dp"
+                android:layout_height="1dp"
+                android:background="#EDEDED"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                >
+
+                <ImageView
+                    android:id="@+id/upcomingLeaveImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:src="@drawable/attendancesummary" />
+
+                <TextView
+                    android:id="@+id/upcomingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Upcoming Leave/Request " />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/backarrow"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="100dp"
+
+                    android:gravity="center"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>

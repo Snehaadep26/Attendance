@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="490dp"
+    app:cardElevation="15dp"
+    app:cardMaxElevation="5dp"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Select Range"
+                android:enabled="false"
+                android:textColor="#191919"
+                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF">
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="24dp"
+                            android:buttonTint="#AEAEAEAE"
+                            android:text="Last week"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@id/rb1"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:buttonTint="#AEAEAEAE"
+                            android:text="Last Month"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+                        <RadioButton
+                            android:id="@+id/rb3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@id/rb1"
+                            android:buttonTint="#AEAEAEAE"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Last 3 months"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+                        <RadioButton
+                            android:id="@+id/rb4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@id/rb1"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:buttonTint="#AEAEAEAE"
+                            android:text="Last 6 months"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+                        <RadioButton
+                            android:id="@+id/rb5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@id/rb1"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:buttonTint="#AEAEAEAE"
+                            android:text="Year to date"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+                        <RadioButton
+                            android:id="@+id/rb6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_below="@id/rb1"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:buttonTint="#AEAEAEAE"
+                            android:text="Specific date range"
+                            android:textColor="#636363"
+                            android:textSize="14dp" />
+                    </RadioGroup>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/startdate_Tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start Date "
+                            android:textColor="#636363"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="24dp"
+                            android:textSize="12sp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/clocl_ET"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="135dp"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:focusableInTouchMode="false"
+                            android:textColorHint="#AEAEAE"
+                            app:boxStrokeColor="#E6E6E6"
+                            app:endIconDrawable="@drawable/calendar"
+                            app:endIconMode="custom"
+                            android:layout_below="@+id/startdate_Tv"
+                            app:hintTextColor="#AEAEAE">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/startdate_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="Select date"
+                                android:inputType="date"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/enddate_Tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="End date"
+                            android:textColor="#636363"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginStart="24dp"
+                            android:textSize="12sp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/selectdate_ET"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="135dp"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="24dp"
+                            android:focusableInTouchMode="false"
+                            android:textColorHint="#AEAEAE"
+                            app:boxStrokeColor="#E6E6E6"
+                            app:endIconDrawable="@drawable/calendar"
+                            app:endIconMode="custom"
+                            android:layout_below="@+id/enddate_Tv"
+                            app:hintTextColor="#AEAEAE">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/endate_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="Select date "
+                                android:inputType="date"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/_cancel_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/rounded_button_color_white"
+                        android:text="CANCEL" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/confirm_topic_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:background="@drawable/round_button1"
+                        android:layout_margin="10dp"
+                        android:text="DOWNLOAD" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>

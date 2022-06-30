@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Attendance</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="present_working_hr">Present Days(s)</string>
+    <string name="absent_working_hr">Absent Days(s)</string>
+    <string name="overall_per">Overall \n Percentage</string>
+    <string name="low_per">Lower attendance</string>
+
+
+    <string name="total_working_hr">Total \n Working Hours</string>
+    <string name="average_working_hr">Average \n Working Hours</string>
+    <string name="total_leaves">Total Leaves</string>
+    <string name="low_working_hr">Low working Hours</string>
+
+    <string name="reason_per">\t Enter reason(s)</string>
+
+    <string-array name="Months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>March</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+
+    </string-array>
+
+</resources>

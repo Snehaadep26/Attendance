@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:orientation="vertical"
+            android:backgroundTint="#F6F4FE"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/blue_stroke_background"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="#191919"
+                android:textSize="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/date_tv"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="day"
+                android:textColor="#636363"
+                android:textSize="12dp"
+                android:fontFamily="@font/roboto_bold"
+                android:id="@+id/day_tv"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Years Day"
+            android:textColor="#191919"
+            android:textSize="14dp"
+            android:fontFamily="@font/roboto"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/holiday_tv"
+            android:layout_marginStart="24dp"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.FragmentAttendanceReviewViewProfile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/toolbar_StudentChapter"
+                tools:ignore="MissingConstraints" >
+                <ImageView
+                    android:id="@+id/back_chapter_detials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attendance"
+                    android:textSize="18dp"
+                    android:id="@+id/subject_name"
+                    android:layout_marginStart="30dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reqleave"
+                    android:layout_marginLeft="180dp"
+                    android:id="@+id/requestLeavesImg"
+
+                    />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_margin="12dp"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#191919"
+                        android:textSize="16dp"
+                        android:id="@+id/overview_viewprofile_Tv"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Overview" />
+                    <TextView
+                        android:id="@+id/date_viewprofile_Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Since 12/12/2021"
+                        android:layout_marginTop="8dp"
+                        android:layout_below="@+id/overview_viewprofile_Tv"
+                        android:textColor="#636363"
+                        android:textSize="12dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/roboto"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/view_profile_layout1"
+                        android:layout_below="@id/date_viewprofile_Tv"
+                        >
+
+                        <ImageView
+                            android:id="@+id/presentdayimage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/present" />
+
+                        <ImageView
+                            android:id="@+id/absentdayimage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="64dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/adsent" />
+
+                        <ImageView
+                            android:id="@+id/overallday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="64dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/overall" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view_profile_layout1"
+                        android:id="@+id/view_profile_layout2"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="34"
+                            android:textSize="18dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="24dp"
+                            android:textColor="#191919"
+                            android:fontFamily="@font/roboto_bold"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="100dp"
+                            android:textColor="#191919"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="56%"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="120dp"
+                            android:textColor="#191919"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_below="@id/view_profile_layout2"
+                        android:id="@+id/view_profile_layout3"
+                        >
+
+                        <TextView
+                            android:id="@+id/presentTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="18dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/present_working_hr"
+                            android:textColor="#636363"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/absentTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="40dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/absent_working_hr"
+                            android:textColor="#636363"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/overallPerTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/overall_per"
+                            android:textColor="#636363"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_below="@id/view_profile_layout3"
+                        android:id="@+id/view_profile_layout4"
+                        >
+
+                        <ImageView
+                            android:id="@+id/totalWorkingImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/workingtotal" />
+
+                        <ImageView
+                            android:id="@+id/averageWorking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="64dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:src="@drawable/avgworking" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view_profile_layout4"
+                        android:id="@+id/view_profile_layout5"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80:60:03"
+                            android:textSize="18dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="23dp"
+                            android:textColor="#191919"
+                            android:fontFamily="@font/roboto_bold"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="08:34"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:layout_marginStart="54dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textColor="#191919"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_below="@id/view_profile_layout5"
+                        android:id="@+id/view_profile_layout6"
+                        >
+
+                        <TextView
+                            android:id="@+id/totalWorkingdayTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/total_working_hr"
+                            android:textColor="#636363"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/averageWorkingTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="35dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/average_working_hr"
+                            android:textColor="#636363"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance details"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:textColor="#191919"
+                android:textSize="16dp"
+                android:fontFamily="@font/roboto_bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="Month "
+                        app:boxBackgroundColor="#FFFFFF"
+                        app:boxStrokeColor="#E6E6E6">
+                        <AutoCompleteTextView
+                            android:id="@+id/selectClassET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:padding="9dp"
+                            android:textSize="12dp" />
+                    </com.google.android.material.textfield.TextInputLayout>                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:layout_marginStart="22dp"
+                    android:src="@drawable/ic_download"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOWNLOAD REPORT"
+                    android:textSize="12dp"
+                    android:gravity="center"
+                    android:id="@+id/download_report"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="4dp"
+                    android:textColor="#1089FF"
+                    android:fontFamily="@font/roboto_bold"/>
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="14dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relative_layout1VP">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRESENT DAYS"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            android:id="@+id/present_days_Tv_Viewprofile"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#AEAEAE"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#191919"
+                            android:textSize="14dp"
+                            android:layout_marginTop="4dp"
+                            android:id="@+id/zero_Tv1_viewprofile"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_below="@id/present_days_Tv_Viewprofile"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TOTAL WORKING HOURS"
+                            android:textSize="10dp"
+                            android:layout_marginTop="8dp"
+                            android:id="@+id/total_working_hr_Tv_viewprofile"
+                            android:textColor="#AEAEAE"
+                            android:fontFamily="@font/roboto"
+                            android:layout_below="@id/zero_Tv1_viewprofile"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="56:09:00"
+                            android:textColor="#191919"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="14dp"
+                            android:layout_below="@id/total_working_hr_Tv_viewprofile"
+                            />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="209dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/relative_layout2VP">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Absent DAYS"
+                            android:gravity="center"
+                            android:textSize="10dp"
+                            android:id="@+id/absent_days_Tv_Viewprofile"
+                            android:fontFamily="@font/roboto"
+                            android:layout_marginTop="12dp"
+                            android:textColor="#AEAEAE"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:layout_marginTop="4dp"
+                            android:textSize="14dp"
+                            android:textColor="#191919"
+                            android:id="@+id/zero_Tv2_viewprofile"
+                            android:fontFamily="@font/roboto_bold"
+                            android:layout_below="@id/absent_days_Tv_Viewprofile"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AVG WORKING HOURS"
+                            android:textColor="#AEAEAE"
+                            android:textSize="10dp"
+                            android:layout_marginTop="8dp"
+                            android:id="@+id/avg_working_hr_Tv_viewprofile"
+                            android:fontFamily="@font/roboto"
+                            android:layout_below="@id/zero_Tv2_viewprofile"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="56:09:00"
+                            android:textColor="#191919"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="14dp"
+                            android:layout_below="@id/avg_working_hr_Tv_viewprofile"
+                            />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
