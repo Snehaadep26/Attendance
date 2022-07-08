@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -19,16 +20,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.attendance.Adapters.MonthAdapterClass;
+import com.example.attendance.AttendanceApi.AttendanceApiClient;
+import com.example.attendance.AttendanceApi.AttendanceLogInService;
+import com.example.attendance.AttendanceApi.PostDownloadReceiptRequest;
+import com.example.attendance.AttendanceApi.PostDownloadReceiptResponse;
 import com.example.attendance.ModelClass.MonthModalClass;
 import com.example.attendance.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 public class FragmentAttendanceReviewViewProfile extends Fragment {
@@ -40,16 +56,18 @@ public class FragmentAttendanceReviewViewProfile extends Fragment {
   RecyclerView.LayoutManager layoutManager;
   RecyclerView.Adapter adapter;
   ArrayList<MonthModalClass> monthModalClassArrayList;
-
+  Retrofit retrofit;
+  AttendanceLogInService attendanceLogInService;
     AlertDialog alertDialog;
-
     AlertDialog.Builder builder;
+    LinearLayout selectRangeLayout;
   TextView downloadReport;
-
   ArrayAdapter<String> selectAdapter;
   ArrayList<String> month;
+  PostDownloadReceiptRequest postDownloadReceiptRequest;
+  PostDownloadReceiptResponse postDownloadReceiptResponse;
 
-
+    RadioGroup radioGroup;
     public FragmentAttendanceReviewViewProfile() {
         // Required empty public constructor
     }
@@ -91,8 +109,23 @@ public class FragmentAttendanceReviewViewProfile extends Fragment {
                 builder.setView(discountpopup);
                 alertDialog = builder.create();
                 alertDialog.show();
+
+                //downloadReceipt();
+                RadioButton button1,button2,button3,button4,button5,specificrange;
+
+                selectRangeLayout=view.findViewById(R.id.layout_cal_range);
+                specificrange=(RadioButton)view.findViewById(R.id.rb6_specific_datarange);
+
+                button1= (RadioButton) view.findViewById(R.id.rb1);
+                button2=view.findViewById(R.id.rb2);
+                button3=view.findViewById(R.id.rb3);
+                button4=view.findViewById(R.id.rb4);
+                button5=view.findViewById(R.id.rb5);
+
+
             }
         });
+        apiInIt();
 
 
        spinner.setOnClickListener(new View.OnClickListener() {
@@ -127,8 +160,37 @@ public class FragmentAttendanceReviewViewProfile extends Fragment {
 
             }
         });
-
         return view;
+    }
+
+
+
+    public void downloadReceipt()
+    {
+        postDownloadReceiptRequest=new PostDownloadReceiptRequest(430,"specificDateRange","2022-05-12","2022-05-15");
+        Call<PostDownloadReceiptResponse> call=attendanceLogInService.postDownloadReceiptCall(postDownloadReceiptRequest);
+        call.enqueue(new Callback<PostDownloadReceiptResponse>() {
+            @Override
+            public void onResponse(Call<PostDownloadReceiptResponse> call, Response<PostDownloadReceiptResponse> response) {
+                if(!response.isSuccessful())
+                {
+                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_SHORT).show();
+                }
+                postDownloadReceiptResponse=response.body();
+                Toast.makeText(getContext(), postDownloadReceiptResponse.file, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<PostDownloadReceiptResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "Error in download receipt", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    public void apiInIt()
+    {
+        retrofit= AttendanceApiClient.getRetrofit();
+        attendanceLogInService= AttendanceApiClient.getLoginService();
     }
     public void selectAdapter(ArrayList<String> months)
     {

@@ -22,4 +22,8 @@
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
+    <style name="ForBottom">
+        <!--        <item name="android:windowEnterAnimation">@android:anim/bounce_interpolator</item>-->
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
 </resources>

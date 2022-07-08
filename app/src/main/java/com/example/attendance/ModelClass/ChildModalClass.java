@@ -1,23 +1,26 @@
 package com.example.attendance.ModelClass;
 
-public class ChildModalClass {
-    String day,date,holidayInfo;
+import java.util.Date;
 
-    public ChildModalClass(String day, String date, String holidayInfo) {
+public class ChildModalClass {
+    String day,holidayInfo;
+    Date date;
+
+    public ChildModalClass(String day, String holidayInfo, Date date) {
         this.day = day;
-        this.date = date;
         this.holidayInfo = holidayInfo;
+        this.date = date;
     }
 
     public String getDay() {
         return day;
     }
 
-    public String getDate() {
-        return date;
-    }
-
     public String getHolidayInfo() {
         return holidayInfo;
+    }
+
+    public Date getDate() {
+        return date;
     }
 }

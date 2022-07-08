@@ -3,15 +3,15 @@ package com.example.attendance.AttendanceApi;
 
 public class AttendanceOverview {
     // @JsonProperty("PresentCount")
-    public double presentCount;
+    public int presentCount;
     // @JsonProperty("AbsentCount")
-    public double absentCount;
+    public int absentCount;
     public double overallPercentage;
     public String totalWorkingHoursTillDate;
     public String averageWorkingHoursTillDate;
     public String totalLeaves;
 
-    public AttendanceOverview(double presentCount, double absentCount, double overallPercentage, String totalWorkingHoursTillDate, String averageWorkingHoursTillDate, String totalLeaves) {
+    public AttendanceOverview(int presentCount, int absentCount, double overallPercentage, String totalWorkingHoursTillDate, String averageWorkingHoursTillDate, String totalLeaves) {
         this.presentCount = presentCount;
         this.absentCount = absentCount;
         this.overallPercentage = overallPercentage;
@@ -20,11 +20,11 @@ public class AttendanceOverview {
         this.totalLeaves = totalLeaves;
     }
 
-    public double getPresentCount() {
+    public int getPresentCount() {
         return presentCount;
     }
 
-    public double getAbsentCount() {
+    public int getAbsentCount() {
         return absentCount;
     }
 

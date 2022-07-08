@@ -48,7 +48,7 @@
             app:srcCompat="@drawable/ic_baseline_delete_24" />
 
         <TextView
-            android:id="@+id/delete_topic"
+            android:id="@+id/delete_leave_req"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

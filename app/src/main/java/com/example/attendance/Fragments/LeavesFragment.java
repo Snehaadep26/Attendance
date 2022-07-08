@@ -12,10 +12,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.attendance.Adapters.LeaveHistoryModalClassAdapter;
+import com.example.attendance.AttendanceApi.AttendanceApiClient;
+import com.example.attendance.AttendanceApi.AttendanceLogInService;
+import com.example.attendance.AttendanceApi.GetProfileTabsResponse;
 import com.example.attendance.ModelClass.LeaveHistoryModalClass;
 import com.example.attendance.R;
 
 import java.util.ArrayList;
+
+import retrofit2.Retrofit;
 
 
 public class LeavesFragment extends Fragment {
@@ -26,7 +31,9 @@ public class LeavesFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter adapter;
-
+    Retrofit retrofit;
+    AttendanceLogInService attendanceLogInService;
+    GetProfileTabsResponse getProfileTabsResponse;
 
     public LeavesFragment() {
         // Required empty public constructor
@@ -45,9 +52,20 @@ public class LeavesFragment extends Fragment {
         view= inflater.inflate(R.layout.fragment_leaves, container, false);
 
         recyclerView=view.findViewById(R.id.leave_history_RV);
+        apiInIt();
+        getProfileTab();
         createCard();
         buildRecyclerview();
         return  view;
+    }
+    public void apiInIt()
+    {
+        retrofit= AttendanceApiClient.getRetrofit();
+        attendanceLogInService= AttendanceApiClient.getLoginService();
+    }
+    public  void getProfileTab()
+    {
+        
     }
     public void createCard()
     {

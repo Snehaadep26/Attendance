@@ -194,7 +194,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="20dp"
                                 android:fontFamily="@font/roboto_bold"
-                                android:text="Weekly Summary "
+                                android:text="Monthky Summary "
                                 android:textColor="#191919"
                                 android:textSize="16sp"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -217,43 +217,24 @@
                             android:layout_width="167dp"
                             android:layout_height="32dp"
                             android:layout_marginStart="19dp"
-                            android:orientation="horizontal"
                             android:background="@drawable/border12"
                             android:layout_marginTop="24dp"
-                            android:gravity="center"
                             >
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="start date"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:layout_marginStart="4dp"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="-"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="4dp"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="end date"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="4dp"
-                                android:gravity="center"
-
-                                />
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/calendar"
-                                android:layout_marginStart="4dp"
-                                android:layout_gravity="center"
-
-                                />
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Month "
+                                app:boxBackgroundColor="#FFFFFF"
+                                app:boxStrokeColor="#E6E6E6">
+                                <AutoCompleteTextView
+                                    android:id="@+id/selectClassET"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:inputType="none"
+                                    android:padding="9dp"
+                                    android:textSize="12dp" />
+                            </com.google.android.material.textfield.TextInputLayout>                </LinearLayout>
 
                         </LinearLayout>
 
@@ -263,7 +244,7 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="240dp"
                     android:layout_height="240dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="12dp"
                     android:layout_gravity="center"
                     android:background="@drawable/circle_shape"
                     android:indeterminate="false"
@@ -276,6 +257,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginTop="350dp"
                     >
                     <TextView
                         android:layout_width="30dp"
@@ -346,7 +328,6 @@
                     </LinearLayout>
 
 
-            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </FrameLayout>
 </ScrollView>

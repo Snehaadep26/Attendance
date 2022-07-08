@@ -6,22 +6,42 @@ import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface AttendanceLogInService {
-    String token = "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA5OCwicGhvbmUiOiIrOTE4MDczMDg5OTA2IiwidXJsIjoidGVzdC50aGVjbGFzc3Jvb20uYml6Iiwib3JnSWQiOiI0Y2IyNTA5ZC03MGY1LTQzNWUtODc5Mi1kMjQ5Mzc3NDNiNTMiLCJkZXZpY2VMb2dpbkNvZGUiOm51bGwsImJyb3dzZXJMb2dpbkNvZGUiOiIrOTE4MDczMDg5OTA2MTA5ODlkODRmNDcwLTg0ODktNGVjOS1hMDUzLTg0Y2IzMjQwOGUzMiIsImlhdCI6MTY1NjUwMDA0M30.ZsMIAhvLSloVY5YqqkZ5v5_2g9m3x988p-AK1SqGo2A";
+    String token = "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY0MSwicGhvbmUiOiIrOTE4OTg5ODk4OTg5IiwidXJsIjoidGVzdC50aGVjbGFzc3Jvb20uYml6Iiwib3JnSWQiOiI0Y2IyNTA5ZC03MGY1LTQzNWUtODc5Mi1kMjQ5Mzc3NDNiNTMiLCJkZXZpY2VMb2dpbkNvZGUiOm51bGwsImJyb3dzZXJMb2dpbkNvZGUiOiIrOTE4OTg5ODk4OTg5MTY0MWUwNWQzNWZjLTM1NzgtNDRlMy1hNmMxLTNmYjg4MzJmYzdmYyIsImlhdCI6MTY1NjY2Mjk5OX0.Vi5zC575QdSPo2pOhehr6RhDvy5hRnI8GaQNLJobwNY";
     String link = "orgurl:test.theclassroom.biz";
 
     @Headers({token, link})
     @POST("attendancev2/clock-in-out")
     Call<PostClockInOutResponse> postClockInOutCall(@Body PostClockInOutRequest postClockInOutRequest);
 
-
     @Headers({token, link})
     @GET("attendancev2/dashboard")
-    Call<HashMap<String, ArrayList<GetDashboardResponse>>> dashBoardCall(@HeaderMap Map<String,String> headers);
+    Call<GetDashboardResponse> dashBoardCall();
+
+    @Headers({token,link})
+    @POST("attendancev2/request")
+    Call<PostClockInOutResponse> postAttendanceCall(@Body PostAttendanceRequest postAttendanceRequest);
+
+    @Headers({token,link})
+    @POST("attendancev2/download-attendance-report")
+    Call<PostDownloadReceiptResponse> postDownloadReceiptCall(@Body PostDownloadReceiptRequest postDownloadReceiptRequest);
+
+    @Headers({token, link})
+    @GET("attendancev2/profile-tabs/1768")
+    Call<GetProfileTabsResponse> getProfileTabsCall();
+
+
+
+    @Headers({token,link})
+    @DELETE("attendancev2/delete-request")
+    Call<DeleteAttendanceRequest> deleteAttendanceCall(@Query("id") int id);
+
 
 }

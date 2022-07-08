@@ -9,6 +9,7 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +24,10 @@ import com.example.attendance.AttendanceApi.PostClockInOutRequest;
 import com.example.attendance.AttendanceApi.PostClockInOutResponse;
 import com.example.attendance.R;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import retrofit2.Call;
@@ -38,14 +41,24 @@ public class HomePage extends Fragment {
     PostClockInOutRequest clockInOutRequest;
     PostClockInOutResponse clockInOutResponse;
     ArrayList<String> set1;
-    //GetDashboardResponse getDashboardResponse;
     Retrofit retrofit;
+    int count;
     AttendanceLogInService attendanceLogInService;
     HashMap<String, ArrayList<GetDashboardResponse>>
             listHashMap;
 
-    TextView clockInTime,clockOutTime,geofenceLoc,dateTv,presentDays,absentays,overallPer,totalWorkinghrs,
-            averageWorkingHrs,totalLeaves;
+    GetDashboardResponse getDashboardResponse;
+    TextView clockInTime;
+    TextView clockOutTime;
+    TextView geofenceLoc;
+    TextView dateTv;
+    TextView presentDays;
+    TextView absentays;
+    String absentday;
+    TextView overallPer;
+    TextView totalWorkinghrs;
+    TextView averageWorkingHrs;
+    TextView totalLeaves;
     private HashMap<String, String> headers;
 
 
@@ -82,6 +95,7 @@ public class HomePage extends Fragment {
 
         apiInIt();
         clockInOut();
+
         dashBoardApi();
 
         SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)v.findViewById(R.id.refreshLayoutAttendanceHome);
@@ -149,14 +163,35 @@ public class HomePage extends Fragment {
                 clockIn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        count++;
                         Toast.makeText(getContext(), clockInOutResponse.show.message, Toast.LENGTH_SHORT).show();
-                        clockIn.setVisibility(View.GONE);
-                        clockOut.setVisibility(View.VISIBLE);
-//                        clockInTime.setText(listHashMap..startTime);
-//                        clockOutTime.setText(getDashboardResponse.attendanceToday.endTime);
+                        if(count==1) {
+                            clockIn.setVisibility(View.GONE);
+
+                            clockOut.setVisibility(View.VISIBLE);
+                            dashBoardApi();
+                        }
+                        else
+                        {
+                            clockIn.setVisibility(View.GONE);
+                            clockOut.setVisibility(View.VISIBLE);
+
+
+                        }
+                     //   Log.e("Starttime",getDashboardResponse.attendanceToday.startTime);
+                       clockInTime.setText(getDashboardResponse.attendanceToday.getStartTime());
                     }
                 });
+                clockOut.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Time time= Time.valueOf(getDashboardResponse.attendanceToday.startTime);
+                        Log.e("Total working", String.valueOf(time));
 
+//                        clockIn.setVisibility(View.VISIBLE);
+                        clockOutTime.setText(getDashboardResponse.attendanceToday.endTime);
+                    }
+                });
             }
             @Override
             public void onFailure(Call<PostClockInOutResponse> call, Throwable t) {
@@ -166,61 +201,95 @@ public class HomePage extends Fragment {
     }
     public void dashBoardApi()
     {
-        Call<HashMap<String, ArrayList<GetDashboardResponse>>> call = attendanceLogInService.dashBoardCall(headers);
-        call.enqueue(new Callback<HashMap<String, ArrayList<GetDashboardResponse>>>() {
-            @Override
-            public void onResponse(Call<HashMap<String, ArrayList<GetDashboardResponse>>> call, Response<HashMap<String, ArrayList<GetDashboardResponse>>> response) {
-                if(response.isSuccessful())
-                {
-                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_SHORT).show();
-                }
-                listHashMap=response.body();
-                Set<String> arrayList=listHashMap.keySet();
-                set1=new ArrayList<>();
-                for(String s:
-                             arrayList){
-                    set1.add(s);
-                }
-                for (int i = 0; i < set1.size(); i++) {
-                    for (int j = 0; j < listHashMap.get(set1.get(i)).size(); j++) {
-                        {
-                            istHashMap.get(stdName.get(i)).get(j).getId(),listHashMap.get(stdName.get(i)).get(j).getStd()));
-                        }
-                    }
-                }
-                Toast.makeText(getContext(),"", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<HashMap<String, ArrayList<GetDashboardResponse>>> call, Throwable t) {
-
-            }
-        });
-//        call.enqueue(new Callback<GetDashboardResponse>() {
+        Call<GetDashboardResponse> call = attendanceLogInService.dashBoardCall();
+//        call.enqueue(new Callback<HashMap<String, ArrayList<GetDashboardResponse>>>() {
 //            @Override
-//            public void onResponse(Call<GetDashboardResponse> call, Response<GetDashboardResponse> response) {
-//                if(!response.isSuccessful())
+//            public void onResponse(Call<HashMap<String, ArrayList<GetDashboardResponse>>> call, Response<HashMap<String, ArrayList<GetDashboardResponse>>> response) {
+//                if(response.isSuccessful())
 //                {
 //                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_SHORT).show();
 //                }
-//                getDashboardResponse=response.body();
 //                listHashMap=response.body();
-//                Toast.makeText(getContext(),getDashboardResponse.attendanceToday.geoFenceTitle, Toast.LENGTH_SHORT).show();
-//                geofenceLoc.setText(getDashboardResponse.attendanceToday.geoFenceTitle);
-//                dateTv.setText(getDashboardResponse.since);
-//                presentDays.setText(String.valueOf(getDashboardResponse.attendanceOverview.presentCount));
-//                absentays.setText(String.valueOf(getDashboardResponse.attendanceOverview.absentCount));
-//                overallPer.setText(String.valueOf(getDashboardResponse.attendanceOverview.overallPercentage));
-//                totalWorkinghrs.setText(getDashboardResponse.attendanceOverview.totalWorkingHoursTillDate);
-//                averageWorkingHrs.setText(getDashboardResponse.attendanceOverview.averageWorkingHoursTillDate);
-//                totalLeaves.setText(getDashboardResponse.attendanceOverview.totalLeaves);
+//                Set<String> arrayList=listHashMap.keySet();
+//                set1=new ArrayList<>();
+//                for(String s:
+//                             arrayList){
+//                    set1.add(s);
+//                }
+//                for (int i = 0; i < set1.size(); i++) {
+//                    for (int j = 0; j < listHashMap.get(set1.get(i)).size(); j++) {
+//                        {
+//                            absentday=String.valueOf(listHashMap.get(set1.get(i)).get(j).attendanceOverview.getAbsentCount());
 //
+//                            Log.i("Absent",absentays.toString());
+//                            Log.i("sent",String.valueOf(listHashMap.get(0).get(0).attendanceOverview.absentCount));
+//                            absentays.setText((CharSequence)absentday);
+////                            if (parentModelArrayList.get(position).getStdClass().equals(listHashMap.get(stdName.get(i)).get(j).getStd())) {
+////                                arrayList.add(new ChildModelclass(listHashMap.get(stdName.get(i)).get(j).getSection(), String.valueOf(listHashMap.get(stdName.get(i)).get(j).getStudentsCount()),listHashMap.get(stdName.get(i)).get(j).getId(),listHashMap.get(stdName.get(i)).get(j).getStd()));
+////                            }
+//                          //  listHashMap.get(stdName.get(i)).get(j).getId(),listHashMap.get(stdName.get(i)).get(j).getStd()));
+//                        }
+//                    }
+//                }
+//                Toast.makeText(getContext(),"", Toast.LENGTH_SHORT).show();
 //            }
 //
 //            @Override
-//            public void onFailure(Call<GetDashboardResponse> call, Throwable t) {
-//                Toast.makeText(getContext(), "error home dashboard", Toast.LENGTH_SHORT).show();
+//            public void onFailure(Call<HashMap<String, ArrayList<GetDashboardResponse>>> call, Throwable t) {
+//
 //            }
 //        });
+        call.enqueue(new Callback<GetDashboardResponse>() {
+            @Override
+            public void onResponse(Call<GetDashboardResponse> call, Response<GetDashboardResponse> response) {
+                if(!response.isSuccessful())
+                {
+                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_SHORT).show();
+                }
+
+                HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+                Set values=new HashSet(hashMap.values());
+                Log.i("hashset", String.valueOf(values));
+                hashMap.put("presentcount",values.size());
+               // hashMap.put("absent",getDashboardResponse.attendanceOverview.absentCount);
+
+                Log.e("hashmap", String.valueOf(hashMap));
+
+                getDashboardResponse=response.body();
+                Log.i("present",String.valueOf(getDashboardResponse.attendanceOverview.getAbsentCount()));
+                Log.i("Geofence",getDashboardResponse.attendanceToday.geoFenceTitle);
+                Log.i("dataaaaa", String.valueOf(getDashboardResponse));
+                Log.i("starttime",getDashboardResponse.attendanceToday.startTime);
+                Log.i("endtime",getDashboardResponse.attendanceToday.endTime);
+                Log.i("average",getDashboardResponse.attendanceOverview.averageWorkingHoursTillDate);
+                Log.i("total leaves",getDashboardResponse.attendanceOverview.totalLeaves);
+                Log.i("totalworking",getDashboardResponse.attendanceOverview.totalWorkingHoursTillDate);
+                Log.i("overallper", String.valueOf(getDashboardResponse.attendanceOverview.overallPercentage));
+                Log.i("since",getDashboardResponse.since);
+                Log.i("holiday",getDashboardResponse.holidays.get(0).data.get(0).title);
+
+
+
+                Toast.makeText(getContext(),getDashboardResponse.attendanceToday.geoFenceTitle, Toast.LENGTH_SHORT).show();
+                geofenceLoc.setText(getDashboardResponse.attendanceToday.geoFenceTitle);
+                dateTv.setText(getDashboardResponse.since);
+                presentDays.setText(String.valueOf(getDashboardResponse.attendanceOverview.getPresentCount()));
+                absentays.setText(String.valueOf(getDashboardResponse.attendanceOverview.getAbsentCount()));
+                overallPer.setText(String.valueOf(getDashboardResponse.attendanceOverview.overallPercentage));
+                totalWorkinghrs.setText(getDashboardResponse.attendanceOverview.totalWorkingHoursTillDate);
+                averageWorkingHrs.setText(getDashboardResponse.attendanceOverview.averageWorkingHoursTillDate);
+                totalLeaves.setText(getDashboardResponse.attendanceOverview.totalLeaves);
+          //      clockInTime.setText(getDashboardResponse.attendanceToday.startTime);
+            //    clockOutTime.setText(getDashboardResponse.attendanceToday.endTime);
+
+
+                Log.e("dddddddddddd", String.valueOf(getDashboardResponse.attendanceOverview.getAbsentCount()));
+            }
+
+            @Override
+            public void onFailure(Call<GetDashboardResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "error home dashboard", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

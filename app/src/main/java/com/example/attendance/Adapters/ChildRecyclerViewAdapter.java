@@ -64,7 +64,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
     {
         ChildModalClass currentItem=childModalClassArrayList.get(position);
         holder.day.setText(childModalClassArrayList.get(position).getDay());
-        holder.date.setText(childModalClassArrayList.get(position).getDate());
+        holder.date.setText((CharSequence) childModalClassArrayList.get(position).getDate());
         holder.holiodayText.setText(childModalClassArrayList.get(position).getHolidayInfo());
 
     }

@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/bottom_calendar.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/delete.xml" value="0.22" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/delete_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_attendance_review_view_profile.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_attendance_summary.xml" value="0.25" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_home_page.xml" value="0.33" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_leaves.xml" value="0.1" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_request_attendance.xml" value="0.33" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/fragment_request_leaves.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/leave_history_card.xml" value="0.25" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/select_range_dialog.xml" value="0.22" />
         <entry key="..\:/Users/Sneha/AndroidStudioProjects/Attendance/app/src/main/res/drawable/back.xml" value="0.1925" />
         <entry key="..\:/Users/Sneha/AndroidStudioProjects/Attendance/app/src/main/res/drawable/background_shape_for_bottomsheet.xml" value="0.1925" />
         <entry key="..\:/Users/Sneha/AndroidStudioProjects/Attendance/app/src/main/res/drawable/blue_stroke_background.xml" value="0.1" />

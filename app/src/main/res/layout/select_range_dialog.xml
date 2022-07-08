@@ -92,7 +92,7 @@
                             android:textColor="#636363"
                             android:textSize="14dp" />
                         <RadioButton
-                            android:id="@+id/rb6"
+                            android:id="@+id/rb6_specific_datarange"
                             android:layout_width="wrap_content"
                             android:layout_height="25dp"
                             android:layout_below="@id/rb1"
@@ -101,12 +101,15 @@
                             android:buttonTint="#AEAEAEAE"
                             android:text="Specific date range"
                             android:textColor="#636363"
-                            android:textSize="14dp" />
+                       />
+
+                        android:textSize="14dp" />
                     </RadioGroup>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
                     android:visibility="gone"
+                    android:id="@+id/layout_cal_range"
                     android:layout_height="wrap_content">
                     <RelativeLayout
                         android:layout_width="wrap_content"
