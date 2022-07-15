@@ -55,7 +55,7 @@ public class ChildRecyclerViewAdapter extends RecyclerView.Adapter<ChildRecycler
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.child_recycler_card_holiday, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance_child_recycler_card_holiday, parent, false);
         return new MyViewHolder(view, (AdapterView.OnItemClickListener) onItemClickListener);
     }
 

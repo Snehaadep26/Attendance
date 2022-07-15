@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -12,21 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.attendance.ModelClass.LeaveHistoryModalClass;
 import com.example.attendance.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LeaveHistoryModalClassAdapter extends RecyclerView.Adapter<LeaveHistoryModalClassAdapter.ViewHolder>{
     ArrayList<LeaveHistoryModalClass> attemptedModels;
@@ -47,7 +39,7 @@ public class LeaveHistoryModalClassAdapter extends RecyclerView.Adapter<LeaveHis
     @NonNull
     @Override
     public LeaveHistoryModalClassAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.leave_history_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance_leave_history_card, parent, false);
         LeaveHistoryModalClassAdapter.ViewHolder subjectViewHolder = new LeaveHistoryModalClassAdapter.ViewHolder(view);
         return subjectViewHolder;
     }
@@ -82,7 +74,7 @@ public class LeaveHistoryModalClassAdapter extends RecyclerView.Adapter<LeaveHis
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    view = LayoutInflater.from(context).inflate(R.layout.delete, null);
+                    view = LayoutInflater.from(context).inflate(R.layout.attendance_delete, null);
 
                     btn = new BottomSheetDialog(context, R.style.AppBottomSheetDialogTheme);
                     Log.i("String String", "");
@@ -97,7 +89,7 @@ public class LeaveHistoryModalClassAdapter extends RecyclerView.Adapter<LeaveHis
                         @Override
                         public void onClick(View view) {
                             builder = new AlertDialog.Builder(context);
-                            final View discountpopup = LayoutInflater.from(context).inflate(R.layout.delete_dialog, null);
+                            final View discountpopup = LayoutInflater.from(context).inflate(R.layout.attendance_delete_dialog, null);
                             discountpopup.setClipToOutline(true);
                             builder.setView(discountpopup);
                             alertDialog = builder.create();

@@ -32,4 +32,14 @@
 
     </string-array>
 
+    <string-array name="Leaves">
+        <item>Privilege Leave</item>
+        <item>Casual Leave</item>
+        <item>Sick Leave</item>
+        <item>Maternity Leave</item>
+        <item>Paternity Leave</item>
+        <item>Marriage Leave</item>
+        <item>Compensatory off</item>
+    </string-array>
+
 </resources>

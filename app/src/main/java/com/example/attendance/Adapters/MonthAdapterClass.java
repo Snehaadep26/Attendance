@@ -1,7 +1,6 @@
 package com.example.attendance.Adapters;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.attendance.ModelClass.MonthModalClass;
@@ -32,7 +29,7 @@ public class MonthAdapterClass extends RecyclerView.Adapter<MonthAdapterClass.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.months_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance_months_card, parent, false);
         ViewHolder subjectViewHolder = new ViewHolder(view);
         return subjectViewHolder;
     }

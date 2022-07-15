@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.example.attendance.AttendanceApi.AttendanceApiClient;
 import com.example.attendance.AttendanceApi.AttendanceLogInService;
-import com.example.attendance.AttendanceApi.AttendanceToday;
 import com.example.attendance.AttendanceApi.GetDashboardResponse;
 import com.example.attendance.AttendanceApi.PostClockInOutRequest;
 import com.example.attendance.AttendanceApi.PostClockInOutResponse;
@@ -58,7 +57,7 @@ public class HomePage extends Fragment {
     TextView overallPer;
     TextView totalWorkinghrs;
     TextView averageWorkingHrs;
-    TextView totalLeaves;
+    TextView totalLeaves,totalworkingClocktime;
     private HashMap<String, String> headers;
 
 
@@ -73,7 +72,7 @@ public class HomePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_home_page, container, false);
+        View v= inflater.inflate(R.layout.attendance_fragment_home_page, container, false);
         NavController navController = NavHostFragment.findNavController(this);
         attendanceSummary=v.findViewById(R.id.attendanceSummaryTv);
         holidays=v.findViewById(R.id.holidayText);
@@ -92,6 +91,7 @@ public class HomePage extends Fragment {
         totalWorkinghrs=v.findViewById(R.id.total_working_hrs);
         averageWorkingHrs=v.findViewById(R.id.average_working_hrs);
         totalLeaves=v.findViewById(R.id.total_leaves);
+        totalworkingClocktime=v.findViewById(R.id.total_working_hrs_clocktext);
 
         apiInIt();
         clockInOut();
@@ -167,7 +167,6 @@ public class HomePage extends Fragment {
                         Toast.makeText(getContext(), clockInOutResponse.show.message, Toast.LENGTH_SHORT).show();
                         if(count==1) {
                             clockIn.setVisibility(View.GONE);
-
                             clockOut.setVisibility(View.VISIBLE);
                             dashBoardApi();
                         }
@@ -175,8 +174,6 @@ public class HomePage extends Fragment {
                         {
                             clockIn.setVisibility(View.GONE);
                             clockOut.setVisibility(View.VISIBLE);
-
-
                         }
                      //   Log.e("Starttime",getDashboardResponse.attendanceToday.startTime);
                        clockInTime.setText(getDashboardResponse.attendanceToday.getStartTime());
@@ -266,7 +263,7 @@ public class HomePage extends Fragment {
                 Log.i("totalworking",getDashboardResponse.attendanceOverview.totalWorkingHoursTillDate);
                 Log.i("overallper", String.valueOf(getDashboardResponse.attendanceOverview.overallPercentage));
                 Log.i("since",getDashboardResponse.since);
-                Log.i("holiday",getDashboardResponse.holidays.get(0).data.get(0).title);
+//                Log.i("holiday",getDashboardResponse.holidays.get(0).data.get(0).title);
 
 
 

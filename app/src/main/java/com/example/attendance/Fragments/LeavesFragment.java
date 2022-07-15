@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.attendance.Adapters.LeaveHistoryModalClassAdapter;
 import com.example.attendance.AttendanceApi.AttendanceApiClient;
@@ -20,6 +21,9 @@ import com.example.attendance.R;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 
@@ -49,7 +53,7 @@ public class LeavesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_leaves, container, false);
+        view= inflater.inflate(R.layout.attendance_fragment_leaves, container, false);
 
         recyclerView=view.findViewById(R.id.leave_history_RV);
         apiInIt();
@@ -65,7 +69,24 @@ public class LeavesFragment extends Fragment {
     }
     public  void getProfileTab()
     {
-        
+        Call<GetProfileTabsResponse> call=attendanceLogInService.getProfileTabsCall();
+        call.enqueue(new Callback<GetProfileTabsResponse>() {
+            @Override
+            public void onResponse(Call<GetProfileTabsResponse> call, Response<GetProfileTabsResponse> response) {
+                if(!response.isSuccessful())
+                {
+                    Toast.makeText(getContext(), response.code(), Toast.LENGTH_SHORT).show();
+                }
+                getProfileTabsResponse=response.body();
+                Toast.makeText(getContext(),getProfileTabsResponse.attendanceTab.attendanceByTimesheet.averageWorkingHoursTillDate, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<GetProfileTabsResponse> call, Throwable t) {
+
+            }
+        });
+
     }
     public void createCard()
     {

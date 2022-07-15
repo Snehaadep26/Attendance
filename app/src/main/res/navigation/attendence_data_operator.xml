@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homePage"
         android:name="com.example.attendance.Fragments.HomePage"
-        tools:layout="@layout/fragment_home_page">
+        tools:layout="@layout/attendance_fragment_home_page">
         <action
             android:id="@+id/action_homePage_to_attendanceSummary"
             app:destination="@id/attendanceSummary" />
@@ -28,23 +28,23 @@
     <fragment
         android:id="@+id/attendanceSummary"
         android:name="com.example.attendance.Fragments.AttendanceSummary"
-        tools:layout="@layout/fragment_attendance_summary" />
+        tools:layout="@layout/attendance_fragment_attendance_summary" />
     <fragment
         android:id="@+id/requestAttendance"
         android:name="com.example.attendance.Fragments.RequestAttendance"
-        tools:layout="@layout/fragment_request_attendance" />
+        tools:layout="@layout/attendance_fragment_request_attendance" />
     <fragment
         android:id="@+id/requestLeaves"
         android:name="com.example.attendance.Fragments.RequestLeaves"
-        tools:layout="@layout/fragment_request_leaves" />
+        tools:layout="@layout/attendance_fragment_request_leaves" />
     <fragment
         android:id="@+id/holidayFragment"
         android:name="com.example.attendance.Fragments.HolidayFragment"
-        tools:layout="@layout/fragment_holiday" />
+        tools:layout="@layout/attendance_fragment_holiday" />
     <fragment
         android:id="@+id/fragmentAttendanceReviewViewProfile"
         android:name="com.example.attendance.Fragments.FragmentAttendanceReviewViewProfile"
-        tools:layout="@layout/fragment_attendance_review_view_profile" >
+        tools:layout="@layout/attendance_fragment_attendance_review_view_profile" >
         <action
             android:id="@+id/action_fragmentAttendanceReviewViewProfile_to_requestLeaves"
             app:destination="@id/requestLeaves" />
@@ -53,7 +53,7 @@
         android:id="@+id/leavesFragment"
         android:name="com.example.attendance.Fragments.LeavesFragment"
         android:label="fragment_leaves"
-        tools:layout="@layout/fragment_leaves" >
+        tools:layout="@layout/attendance_fragment_leaves" >
         <action
             android:id="@+id/action_leavesFragment_to_requestLeaves"
             app:destination="@id/requestLeaves" />

@@ -1,8 +1,6 @@
 package com.example.attendance.Fragments;
 
 import android.app.AlertDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,21 +10,15 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +29,6 @@ import com.example.attendance.AttendanceApi.PostDownloadReceiptRequest;
 import com.example.attendance.AttendanceApi.PostDownloadReceiptResponse;
 import com.example.attendance.ModelClass.MonthModalClass;
 import com.example.attendance.R;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 
@@ -84,7 +75,7 @@ public class FragmentAttendanceReviewViewProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_attendance_review_view_profile, container, false);
+        view= inflater.inflate(R.layout.attendance_fragment_attendance_review_view_profile, container, false);
         NavController navController = NavHostFragment.findNavController(this);
 
         spinner=view.findViewById(R.id.selectClassET);
@@ -104,7 +95,7 @@ public class FragmentAttendanceReviewViewProfile extends Fragment {
             public void onClick(View view) {
 
                 builder = new AlertDialog.Builder(getContext());
-                final View discountpopup = getLayoutInflater().inflate(R.layout.select_range_dialog, null);
+                final View discountpopup = getLayoutInflater().inflate(R.layout.attendance_select_range_dialog, null);
                 discountpopup.setClipToOutline(true);
                 builder.setView(discountpopup);
                 alertDialog = builder.create();

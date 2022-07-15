@@ -2,7 +2,6 @@ package com.example.attendance.Adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -64,7 +62,7 @@ public class ParentRecyclerViewAdapter extends RecyclerView.Adapter<ParentRecycl
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent,int ViewType)
     {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.parent_recycler_card_holiday,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance_parent_recycler_card_holiday,parent,false);
         return new MyViewHolder(view);
     }
     @Override

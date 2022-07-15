@@ -30,9 +30,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.Timer;
-import java.util.logging.Logger;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -71,7 +68,7 @@ public class RequestAttendance extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_request_attendance, container, false);
+        view= inflater.inflate(R.layout.attendance_fragment_request_attendance, container, false);
         apiInIt();
         calendar=view.findViewById(R.id.date_tv);
         selectDate=view.findViewById(R.id.datepick);
@@ -83,7 +80,7 @@ public class RequestAttendance extends Fragment {
         selectDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view=getLayoutInflater().inflate(R.layout.bottom_calendar,null);
+                view=getLayoutInflater().inflate(R.layout.attendance_bottom_calendar,null);
                 calendarViewTwo = view.findViewById(R.id.datePicker);
                 BottomSheetDialog btn=new BottomSheetDialog(getActivity(),R.style.AppBottomSheetDialogTheme);
                 btn.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

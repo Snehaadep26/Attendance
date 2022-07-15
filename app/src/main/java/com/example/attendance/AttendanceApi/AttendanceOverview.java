@@ -1,10 +1,11 @@
 package com.example.attendance.AttendanceApi;
 
+import com.google.gson.annotations.SerializedName;
 
 public class AttendanceOverview {
-    // @JsonProperty("PresentCount")
+    @SerializedName("PresentCount")
     public int presentCount;
-    // @JsonProperty("AbsentCount")
+    @SerializedName("AbsentCount")
     public int absentCount;
     public double overallPercentage;
     public String totalWorkingHoursTillDate;

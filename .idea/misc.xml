@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/drawable/circle_progress_bar.xml" value="0.205" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/attendance_fragment_home_page.xml" value="0.32653061224489793" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/attendance_fragment_leaves.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/attendance_fragment_request_leaves.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/bottom_calendar.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/delete.xml" value="0.22" />
         <entry key="..\:/Users/Brigosha_Guest/AndroidStudioProjects/Attendance/app/src/main/res/layout/delete_dialog.xml" value="0.33" />

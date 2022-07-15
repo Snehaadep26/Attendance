@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface AttendanceLogInService {
-    String token = "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY0MSwicGhvbmUiOiIrOTE4OTg5ODk4OTg5IiwidXJsIjoidGVzdC50aGVjbGFzc3Jvb20uYml6Iiwib3JnSWQiOiI0Y2IyNTA5ZC03MGY1LTQzNWUtODc5Mi1kMjQ5Mzc3NDNiNTMiLCJkZXZpY2VMb2dpbkNvZGUiOm51bGwsImJyb3dzZXJMb2dpbkNvZGUiOiIrOTE4OTg5ODk4OTg5MTY0MWUwNWQzNWZjLTM1NzgtNDRlMy1hNmMxLTNmYjg4MzJmYzdmYyIsImlhdCI6MTY1NjY2Mjk5OX0.Vi5zC575QdSPo2pOhehr6RhDvy5hRnI8GaQNLJobwNY";
+    String token = "Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTg4NywicGhvbmUiOiIrOTE4MDczMDg5OTA3IiwidXJsIjoidGVzdC50aGVjbGFzc3Jvb20uYml6Iiwib3JnSWQiOiI0Y2IyNTA5ZC03MGY1LTQzNWUtODc5Mi1kMjQ5Mzc3NDNiNTMiLCJkZXZpY2VMb2dpbkNvZGUiOm51bGwsImJyb3dzZXJMb2dpbkNvZGUiOiIrOTE4MDczMDg5OTA3MTg4NzU2OTg5ZjljLWYwYzQtNDM3MC1iN2Y1LTdlNThiMWU5YzBlYSIsImlhdCI6MTY1NzY5NDg4MH0.1JWflQ-H1PQWCOfPs_klH9Mr6qiNdTE8YMEyt9vK5is";
     String link = "orgurl:test.theclassroom.biz";
 
     @Headers({token, link})
@@ -34,7 +34,7 @@ public interface AttendanceLogInService {
     Call<PostDownloadReceiptResponse> postDownloadReceiptCall(@Body PostDownloadReceiptRequest postDownloadReceiptRequest);
 
     @Headers({token, link})
-    @GET("attendancev2/profile-tabs/1768")
+    @GET("attendancev2/profile-tabs/1882")
     Call<GetProfileTabsResponse> getProfileTabsCall();
 
 

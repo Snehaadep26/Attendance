@@ -22,7 +22,7 @@
             android:layout_marginStart="24dp"
             />
         <AutoCompleteTextView
-            android:id="@+id/spi"
+            android:id="@+id/spinnerLeavesReq"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_margin="24dp"

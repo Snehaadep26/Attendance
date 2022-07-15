@@ -1,11 +1,8 @@
 package com.example.attendance.Fragments;
 
-import static androidx.fragment.app.FragmentManager.TAG;
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,7 +55,7 @@ public class HolidayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_holiday, container, false);
+        view= inflater.inflate(R.layout.attendance_fragment_holiday, container, false);
        // createCard();
        // buildRecyclerview();
         apiInIt();
